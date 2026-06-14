@@ -21,3 +21,4 @@ int process_file(char *filename);
 int execute_line(char *line, unsigned int line_number, stack_t **stack);
 
 #endif
+void pint(stack_t **stack, unsigned int line_number);
