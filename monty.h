@@ -29,3 +29,4 @@ int execute_line(char *line, unsigned int line_number, stack_t **stack);
 
 #endif
 void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
