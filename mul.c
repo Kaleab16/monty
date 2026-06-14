@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * mul - multiplies the second top element by the top element
+ * @stack: double pointer to the stack
+ * @line_number: line number of the opcode
+ */
 void mul(stack_t **stack, unsigned int line_number)
 {
 stack_t *first;
