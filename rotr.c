@@ -1,14 +1,15 @@
 #include "monty.h"
 
 /**
- * rotl - rotates the stack to the top
+ * rotr - rotates the stack to the bottom
  * @stack: double pointer to the stack
  * @line_number: line number of the opcode
  */
-void rotl(stack_t **stack, unsigned int line_number)
+void rotr(stack_t **stack, unsigned int line_number)
 {
 stack_t *first;
 stack_t *last;
+stack_t *second_last;
 (void)line_number;
 
 if (*stack == NULL || (*stack)->next == NULL)
@@ -21,11 +22,14 @@ last = first;
 while (last->next != NULL)
 last = last->next;
 
-/* Rotate: move top to bottom */
-*stack = first->next;
-(*stack)->prev = NULL;
+/* Find the second last node */
+second_last = last->prev;
 
+/* Rotate: move bottom to top */
 last->next = first;
+last->prev = NULL;
 first->prev = last;
-first->next = NULL;
+second_last->next = NULL;
+
+*stack = last;
 }
